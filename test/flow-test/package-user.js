@@ -1,6 +1,7 @@
 // @flow
 
-import type { State, Action } from 'redux'
+import type { Reducer } from 'redux'
+import type { State, Action } from 'better-combine-reducers'
 import { combineReducers } from 'redux'
 import better from 'better-combine-reducers'
 

@@ -3,10 +3,14 @@
  * You need redux type definition.
  *
  * npm install -g flow-typed
- * flow-typed install -f 0.30 redux@3.5.2
+ * flow-typed install -f 0.32 redux@3.5.2
  *
  */
 
-import type { Reducer, State, Reducers, combineReducers } from 'redux'
+import type { Reducer, combineReducers } from 'redux'
 
-declare export default function better(original: combineReducers): (reducers: Reducers, initialState: State) => Reducer<any, any>;
+export type State = any;
+export type Action = Object;
+export type Reducers = { [key: string]: Reducer<any, any> };
+
+declare export default function better(original: combineReducers<State, Action>): (reducers: Object, initialState: State) => Reducer<any, any>;
